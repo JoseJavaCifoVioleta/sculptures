@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="fix: handleClick  arreglo el error al llegar al final de la lista (cuando index supera sculptureList.length - 1)">
+    <list default="true" id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="core: Única fuente de la verdad con data.js, Pasar solo las props estrictamente necesarias, modificar flujo sculptures">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sculptures/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sculptures/src/SculpturesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/src/SculpturesPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,61 +35,61 @@
 }]]></component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.5510952405721268" />
-      <entry key="MS500" value="2.4651730282182833" />
-      <entry key="S2" value="2.8450194759279115" />
-      <entry key="S5" value="2.93605753530035" />
-      <entry key="S10" value="2.9676934347371016" />
-      <entry key="S30" value="2.995357589263101" />
-      <entry key="S60" value="3.1944197325289148" />
-      <entry key="M2" value="4.168452807475926" />
-      <entry key="M5" value="6.458282963874877" />
-      <entry key="M10" value="9.395632607543789" />
-      <entry key="M15" value="13.533687719135209" />
-      <entry key="M30" value="26.163570560311683" />
-      <entry key="H1" value="40.89455886768081" />
-      <entry key="H2" value="52.382489048908425" />
-      <entry key="H4" value="59.59095407541093" />
-      <entry key="D1" value="66.50683921008147" />
-      <entry key="W1" value="67.78433009101595" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.000279713392795" />
+      <entry key="S2" value="1.3627476044384947" />
+      <entry key="S5" value="2.713557821452008" />
+      <entry key="S10" value="3.933961756053191" />
+      <entry key="S30" value="5.901217237670473" />
+      <entry key="S60" value="8.050823871571932" />
+      <entry key="M2" value="10.838801034090817" />
+      <entry key="M5" value="13.97814976206212" />
+      <entry key="M10" value="16.25807226392231" />
+      <entry key="M15" value="18.750790279149268" />
+      <entry key="M30" value="28.51553800118474" />
+      <entry key="H1" value="44.51730255321659" />
+      <entry key="H2" value="60.05131872934406" />
+      <entry key="H4" value="71.04205107676815" />
+      <entry key="D1" value="82.43481130762274" />
+      <entry key="W1" value="84.62721171398053" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="1.744265491773118E-177" />
-      <entry key="S10" value="5.7539516181666614E-89" />
-      <entry key="S30" value="6.091024558447973E-30" />
-      <entry key="S60" value="3.4875856226722513E-15" />
-      <entry key="M2" value="8.350135061232536E-8" />
-      <entry key="M5" value="0.002234988256429251" />
-      <entry key="M10" value="0.06685736585980173" />
-      <entry key="M15" value="0.20754332008014834" />
-      <entry key="M30" value="0.6442716249629332" />
-      <entry key="H1" value="1.135139945669912" />
-      <entry key="H2" value="1.506744718743761" />
-      <entry key="H4" value="1.735940481859581" />
-      <entry key="D1" value="1.9533533007643618" />
-      <entry key="W1" value="1.9932685980602078" />
+      <entry key="S5" value="5.449482102992634E-298" />
+      <entry key="S10" value="3.2161591148274387E-149" />
+      <entry key="S30" value="5.017423861068884E-50" />
+      <entry key="S60" value="3.165338053085873E-25" />
+      <entry key="M2" value="7.955016965823105E-13" />
+      <entry key="M5" value="2.1920693491482925E-5" />
+      <entry key="M10" value="0.006621231670103798" />
+      <entry key="M15" value="0.04442578473394313" />
+      <entry key="M30" value="0.2980795476961335" />
+      <entry key="H1" value="0.7721132295398208" />
+      <entry key="H2" value="1.2426690199711332" />
+      <entry key="H4" value="1.5764954719875885" />
+      <entry key="D1" value="1.9222378161244338" />
+      <entry key="W1" value="1.9887014225108082" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.514356682007978" />
-      <entry key="MS500" value="2.4512536447290354" />
-      <entry key="S2" value="2.840813966891341" />
-      <entry key="S5" value="2.934304947206333" />
-      <entry key="S10" value="2.966804879974785" />
-      <entry key="S30" value="2.9950576972987566" />
-      <entry key="S60" value="3.1942526602784707" />
-      <entry key="M2" value="4.1683240541808235" />
-      <entry key="M5" value="6.460394113969954" />
-      <entry key="M10" value="9.461984011497204" />
-      <entry key="M15" value="13.740252621281066" />
-      <entry key="M30" value="26.806341071554353" />
-      <entry key="H1" value="42.02837055408542" />
-      <entry key="H2" value="53.88834883957582" />
-      <entry key="H4" value="61.32638363725584" />
-      <entry key="D1" value="68.46009649714574" />
-      <entry key="W1" value="69.77758468746312" />
+      <entry key="MS100" value="2.464772798346908E-16" />
+      <entry key="MS500" value="0.0010338157763009376" />
+      <entry key="S2" value="0.5280454393497236" />
+      <entry key="S5" value="2.199950134822365" />
+      <entry key="S10" value="3.631246491087888" />
+      <entry key="S30" value="5.78785728761063" />
+      <entry key="S60" value="7.992345763163857" />
+      <entry key="M2" value="10.809055483149729" />
+      <entry key="M5" value="13.966134464052953" />
+      <entry key="M10" value="16.258600267760887" />
+      <entry key="M15" value="18.790972097597244" />
+      <entry key="M30" value="28.8109028287059" />
+      <entry key="H1" value="45.28750145694723" />
+      <entry key="H2" value="61.29275230030432" />
+      <entry key="H4" value="72.61782970136045" />
+      <entry key="D1" value="84.35691249038452" />
+      <entry key="W1" value="86.61589314550017" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -180,6 +179,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Migrate React project from CodeSandbox to Vite scaffolding&#10;&#10;Remove root-level files created by CodeSandbox (package.json, src/, public/,  &#10;.gitignore, .codesandbox/, README.md) and add a new Vite-based project under  &#10;the sculptures/ subdirectory with updated dependencies, ESLint config, and  &#10;assets." />
     <MESSAGE value="fix: handleClick  arreglo el error al llegar al final de la lista (cuando index supera sculptureList.length - 1)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: handleClick  arreglo el error al llegar al final de la lista (cuando index supera sculptureList.length - 1)" />
+    <MESSAGE value="core: Única fuente de la verdad con data.js, Pasar solo las props estrictamente necesarias, modificar flujo sculptures" />
+    <option name="LAST_COMMIT_MESSAGE" value="core: Única fuente de la verdad con data.js, Pasar solo las props estrictamente necesarias, modificar flujo sculptures" />
   </component>
 </project>
