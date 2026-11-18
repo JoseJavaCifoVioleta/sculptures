@@ -1,3 +1,4 @@
+import { sculptureList } from "./data.js";
 import SculpturesPage from "./SculpturesPage";
 import SculptureAdd from "./SculpturesAdd";
 import SculptureRemove from "./SculpturesRemove";
@@ -6,18 +7,32 @@ import { useState } from "react";
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState("sculpture-page");
+  // 1. Elevamos el estado: App ahora es el dueño de la lista compartida
+  const [sculptures, setSculptures] = useState(sculptureList);
 
   const dispatcherPage = () => {
     switch (currentPage) {
-      case "sculpture-page":
-        return <SculpturesPage />;
+      case "sculpture-page": // Solo necesita leer la lista
+          return <SculpturesPage sculptures={sculptures} />;
       case "sculpture-add":
-        return <SculptureAdd />;
+          // Necesita leer la lista y modificarla
+          return (
+              <SculptureAdd
+                  sculptures={sculptures}
+                  setSculptures={setSculptures}
+              />
+          );
       case "sculpture-remove":
-        return <SculptureRemove />;
+          // Necesita leer la lista y modificarla
+          return (
+              <SculptureRemove
+                  sculptures={sculptures}
+                  setSculptures={setSculptures}
+              />
+          );
       case "sculptures-filtered-by-year":
-        return <SculpturesFilteredByYear />;
-
+          // Solo necesita leer la lista para filtrarla
+          return <SculpturesFilteredByYear sculptures={sculptures} />;
       default:
         return <div>Select a page</div>;
     }

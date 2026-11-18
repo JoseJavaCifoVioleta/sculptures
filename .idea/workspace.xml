@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="Remove Vite boilerplate styles and assets&#10;&#10;Delete App.css with hero layout and counter styling, remove template  &#10;images (hero.png, react.svg, vite.svg), and strip index.css globals  &#10;down to minimal base styles.">
+    <list default="true" id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="fix: handleClick  arreglo el error al llegar al final de la lista (cuando index supera sculptureList.length - 1)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sculptures/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sculptures/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sculptures/src/SculpturesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/src/SculpturesPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,6 +15,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -32,61 +36,61 @@
 }]]></component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="5.186021343317692E-7" />
-      <entry key="MS500" value="0.17582551533359533" />
-      <entry key="S2" value="3.043158941976089" />
-      <entry key="S5" value="6.786926569022752" />
-      <entry key="S10" value="11.743363892998335" />
-      <entry key="S30" value="22.44287611462972" />
-      <entry key="S60" value="27.75127819267278" />
-      <entry key="M2" value="31.634309048518244" />
-      <entry key="M5" value="38.43647624483055" />
-      <entry key="M10" value="44.93163990897467" />
-      <entry key="M15" value="48.29404314438506" />
-      <entry key="M30" value="52.560717595435435" />
-      <entry key="H1" value="55.114091808164275" />
-      <entry key="H2" value="56.51272272209822" />
-      <entry key="H4" value="57.24491565491405" />
-      <entry key="D1" value="57.87253095845225" />
-      <entry key="W1" value="57.981749999263656" />
+      <entry key="MS100" value="1.5510952405721268" />
+      <entry key="MS500" value="2.4651730282182833" />
+      <entry key="S2" value="2.8450194759279115" />
+      <entry key="S5" value="2.93605753530035" />
+      <entry key="S10" value="2.9676934347371016" />
+      <entry key="S30" value="2.995357589263101" />
+      <entry key="S60" value="3.1944197325289148" />
+      <entry key="M2" value="4.168452807475926" />
+      <entry key="M5" value="6.458282963874877" />
+      <entry key="M10" value="9.395632607543789" />
+      <entry key="M15" value="13.533687719135209" />
+      <entry key="M30" value="26.163570560311683" />
+      <entry key="H1" value="40.89455886768081" />
+      <entry key="H2" value="52.382489048908425" />
+      <entry key="H4" value="59.59095407541093" />
+      <entry key="D1" value="66.50683921008147" />
+      <entry key="W1" value="67.78433009101595" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000795377898781" />
-      <entry key="S2" value="1.094437260387137" />
-      <entry key="S5" value="1.3890965247708522" />
-      <entry key="S10" value="1.62377602131763" />
-      <entry key="S30" value="1.8544294821745573" />
-      <entry key="S60" value="1.9243535482565948" />
-      <entry key="M2" value="1.9614330700868339" />
-      <entry key="M5" value="1.9843909730511848" />
-      <entry key="M10" value="1.9921647912777318" />
-      <entry key="M15" value="1.9947696824897108" />
-      <entry key="M30" value="1.99738141274525" />
-      <entry key="H1" value="1.998689848123656" />
-      <entry key="H2" value="1.9993447093589156" />
-      <entry key="H4" value="1.999672300986136" />
-      <entry key="D1" value="1.9999453760387895" />
-      <entry key="W1" value="1.9999921963942837" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="1.744265491773118E-177" />
+      <entry key="S10" value="5.7539516181666614E-89" />
+      <entry key="S30" value="6.091024558447973E-30" />
+      <entry key="S60" value="3.4875856226722513E-15" />
+      <entry key="M2" value="8.350135061232536E-8" />
+      <entry key="M5" value="0.002234988256429251" />
+      <entry key="M10" value="0.06685736585980173" />
+      <entry key="M15" value="0.20754332008014834" />
+      <entry key="M30" value="0.6442716249629332" />
+      <entry key="H1" value="1.135139945669912" />
+      <entry key="H2" value="1.506744718743761" />
+      <entry key="H4" value="1.735940481859581" />
+      <entry key="D1" value="1.9533533007643618" />
+      <entry key="W1" value="1.9932685980602078" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="4.716498465721872E-5" />
-      <entry key="MS500" value="0.29261666725911956" />
-      <entry key="S2" value="3.6001244746445447" />
-      <entry key="S5" value="7.697897738957148" />
-      <entry key="S10" value="12.97546708295753" />
-      <entry key="S30" value="24.097313595448266" />
-      <entry key="S60" value="29.5625879275456" />
-      <entry key="M2" value="33.535377297221615" />
-      <entry key="M5" value="40.395337209117365" />
-      <entry key="M10" value="46.9105785957942" />
-      <entry key="M15" value="50.27984636710394" />
-      <entry key="M30" value="54.553523008650345" />
-      <entry key="H1" value="57.110466144852495" />
-      <entry key="H2" value="58.510902162417416" />
-      <entry key="H4" value="59.24400335681163" />
-      <entry key="D1" value="59.872378620793704" />
-      <entry key="W1" value="59.981728229586295" />
+      <entry key="MS100" value="1.514356682007978" />
+      <entry key="MS500" value="2.4512536447290354" />
+      <entry key="S2" value="2.840813966891341" />
+      <entry key="S5" value="2.934304947206333" />
+      <entry key="S10" value="2.966804879974785" />
+      <entry key="S30" value="2.9950576972987566" />
+      <entry key="S60" value="3.1942526602784707" />
+      <entry key="M2" value="4.1683240541808235" />
+      <entry key="M5" value="6.460394113969954" />
+      <entry key="M10" value="9.461984011497204" />
+      <entry key="M15" value="13.740252621281066" />
+      <entry key="M30" value="26.806341071554353" />
+      <entry key="H1" value="42.02837055408542" />
+      <entry key="H2" value="53.88834883957582" />
+      <entry key="H4" value="61.32638363725584" />
+      <entry key="D1" value="68.46009649714574" />
+      <entry key="W1" value="69.77758468746312" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -105,7 +109,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "PRA-React-Sculptures-CRUD-Practice",
     "javascript.preferred.runtime.type.id": "node",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/home/albert/MyProjects/ReactProject/sculptures",
@@ -150,8 +154,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="PRA-React-Sculptures-CRUD-Practice" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Migrate React project from CodeSandbox to Vite scaffolding&#10;&#10;Remove root-level files created by CodeSandbox (package.json, src/, public/,  &#10;.gitignore, .codesandbox/, README.md) and add a new Vite-based project under  &#10;the sculptures/ subdirectory with updated dependencies, ESLint config, and  &#10;assets." />
-    <option name="LAST_COMMIT_MESSAGE" value="Migrate React project from CodeSandbox to Vite scaffolding&#10;&#10;Remove root-level files created by CodeSandbox (package.json, src/, public/,  &#10;.gitignore, .codesandbox/, README.md) and add a new Vite-based project under  &#10;the sculptures/ subdirectory with updated dependencies, ESLint config, and  &#10;assets." />
+    <MESSAGE value="fix: handleClick  arreglo el error al llegar al final de la lista (cuando index supera sculptureList.length - 1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: handleClick  arreglo el error al llegar al final de la lista (cuando index supera sculptureList.length - 1)" />
   </component>
 </project>
