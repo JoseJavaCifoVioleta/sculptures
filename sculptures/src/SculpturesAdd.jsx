@@ -1,8 +1,22 @@
 import { useState } from "react";
-import { sculptureList } from "./data.js";
+//import { sculptureList } from "./data.js";
 
-export default function SculpturesAdd() {
-  const [sculpture, setSculpture] = useState({
+// 1. Recibimos la lista actual y la función para actualizarla desde App.jsx
+export default function SculpturesAdd({ sculptures, setSculptures }) {
+  // Mantenemos el estado inicial en una constante para reutilizarlo al limpiar el formulario
+
+  const initialFormState = {
+    name: "",
+    artist: "",
+    year: "",
+    url: "",
+    alt: "",
+    description: "",
+  };
+
+  // Este estado SÍ se queda aquí: solo le importa a este formulario mientras escribes
+  const [sculpture, setSculpture] = useState(initialFormState);
+  /*const [sculpture, setSculpture] = useState({
     name: "",
     artist: "",
     year: "",
@@ -10,7 +24,9 @@ export default function SculpturesAdd() {
     alt: "",
     description: "",
   });
-  const [sculptures, setSculptures] = useState(sculptureList);
+   */
+
+  //const [sculptures, setSculptures] = useState(sculptureList);
 
   function handleChange(e) {
     setSculpture({
@@ -22,8 +38,12 @@ export default function SculpturesAdd() {
   function handleSubmit(e) {
     e.preventDefault();
     // Here we would normally handle adding the sculpture
-    console.log("New Sculpture:", sculpture);
+    //console.log("New Sculpture:", sculpture);
+    //setSculptures([...sculptures, sculpture]);
+    // 2. Actualizamos la lista global del padre sin mutar el array original
     setSculptures([...sculptures, sculpture]);
+    // 3. Limpiamos los campos del formulario tras guardar
+    setSculpture(initialFormState);
   }
 
   return (
@@ -82,8 +102,10 @@ export default function SculpturesAdd() {
         <br />
         <button type="submit">Add Sculpture</button>
       </form>
+      {/*
       {sculpture.name} {sculpture.artist} {sculpture.year} {sculpture.url}{" "}
       {sculpture.alt} {sculpture.description}
+      */}
       <h4>Sculptures list:</h4>
       <ul>
         {sculptures.map((scul, index) => (
