@@ -4,8 +4,18 @@ import { sculptureList } from "./data.js";
 export default function SculpturesPage() {
   const [index, setIndex] = useState(0);
 
+  /*
   function handleClick() {
     setIndex(index + 1);
+  }
+   */
+
+  function handleClick() {
+    if (index < sculptureList.length - 1) {
+        setIndex(index + 1);
+    } else {
+        setIndex(0);
+    }
   }
 
   let sculpture = sculptureList[index];

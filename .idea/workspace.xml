@@ -6,11 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ec6cfa43-7bf8-4eb7-9463-8f90ec86fac0" name="Changes" comment="Remove Vite boilerplate styles and assets&#10;&#10;Delete App.css with hero layout and counter styling, remove template  &#10;images (hero.png, react.svg, vite.svg), and strip index.css globals  &#10;down to minimal base styles.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sculptures/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sculptures/src/assets/hero.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sculptures/src/assets/react.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sculptures/src/assets/vite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sculptures/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sculptures/src/SculpturesPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/sculptures/src/SculpturesPage.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,69 +24,69 @@
     &quot;assignee&quot;: &quot;AlbertProfe&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/AlbertProfe/sculptures.git&quot;,
-    &quot;accountId&quot;: &quot;1368c1e3-c0bb-42c1-be8c-64f047e2f494&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/AlbertProfe/sculptures.git",
+    "accountId": "7eb0890c-6ffe-466a-ae44-66b718a2d223"
   }
-}</component>
+}]]></component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0594915232423767" />
-      <entry key="MS500" value="2.70953569463615" />
-      <entry key="S2" value="5.530463408549557" />
-      <entry key="S5" value="8.213083940524339" />
-      <entry key="S10" value="12.683326014003283" />
-      <entry key="S30" value="22.616805015651995" />
-      <entry key="S60" value="27.46789992853943" />
-      <entry key="M2" value="31.04017486623753" />
-      <entry key="M5" value="37.632991756183806" />
-      <entry key="M10" value="44.046361195093795" />
-      <entry key="M15" value="47.37621417485729" />
-      <entry key="M30" value="51.605414966620074" />
-      <entry key="H1" value="54.13752148940041" />
-      <entry key="H2" value="55.52473364908983" />
-      <entry key="H4" value="56.25099862267414" />
-      <entry key="D1" value="56.873555859031306" />
-      <entry key="W1" value="56.98189668890352" />
+      <entry key="MS100" value="5.186021343317692E-7" />
+      <entry key="MS500" value="0.17582551533359533" />
+      <entry key="S2" value="3.043158941976089" />
+      <entry key="S5" value="6.786926569022752" />
+      <entry key="S10" value="11.743363892998335" />
+      <entry key="S30" value="22.44287611462972" />
+      <entry key="S60" value="27.75127819267278" />
+      <entry key="M2" value="31.634309048518244" />
+      <entry key="M5" value="38.43647624483055" />
+      <entry key="M10" value="44.93163990897467" />
+      <entry key="M15" value="48.29404314438506" />
+      <entry key="M30" value="52.560717595435435" />
+      <entry key="H1" value="55.114091808164275" />
+      <entry key="H2" value="56.51272272209822" />
+      <entry key="H4" value="57.24491565491405" />
+      <entry key="D1" value="57.87253095845225" />
+      <entry key="W1" value="57.981749999263656" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.4112693171413104E-14" />
-      <entry key="MS500" value="0.0016979385939258234" />
-      <entry key="S2" value="0.20299273497563025" />
-      <entry key="S5" value="0.5284357584514688" />
-      <entry key="S10" value="0.7269358695589792" />
-      <entry key="S30" value="0.8991497606274687" />
-      <entry key="S60" value="0.9482350766700568" />
-      <entry key="M2" value="0.9737736270150557" />
-      <entry key="M5" value="0.9894257375270429" />
-      <entry key="M10" value="0.9946988174955488" />
-      <entry key="M15" value="0.9964627484466682" />
-      <entry key="M30" value="0.9982298074324711" />
-      <entry key="H1" value="0.9991145116714459" />
-      <entry key="H2" value="0.9995571577811074" />
-      <entry key="H4" value="0.9997785543714703" />
-      <entry key="D1" value="0.9999630889893557" />
-      <entry key="W1" value="0.999994726915064" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000795377898781" />
+      <entry key="S2" value="1.094437260387137" />
+      <entry key="S5" value="1.3890965247708522" />
+      <entry key="S10" value="1.62377602131763" />
+      <entry key="S30" value="1.8544294821745573" />
+      <entry key="S60" value="1.9243535482565948" />
+      <entry key="M2" value="1.9614330700868339" />
+      <entry key="M5" value="1.9843909730511848" />
+      <entry key="M10" value="1.9921647912777318" />
+      <entry key="M15" value="1.9947696824897108" />
+      <entry key="M30" value="1.99738141274525" />
+      <entry key="H1" value="1.998689848123656" />
+      <entry key="H2" value="1.9993447093589156" />
+      <entry key="H4" value="1.999672300986136" />
+      <entry key="D1" value="1.9999453760387895" />
+      <entry key="W1" value="1.9999921963942837" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.16722337868908735" />
-      <entry key="MS500" value="2.338709962015502" />
-      <entry key="S2" value="5.432601815513225" />
-      <entry key="S5" value="8.341939348090875" />
-      <entry key="S10" value="13.066522724312826" />
-      <entry key="S30" value="23.340601201087782" />
-      <entry key="S60" value="28.31742964464633" />
-      <entry key="M2" value="31.961365919057737" />
-      <entry key="M5" value="38.60016247409742" />
-      <entry key="M10" value="45.0295000444052" />
-      <entry key="M15" value="48.36482784425509" />
-      <entry key="M30" value="52.5996308848724" />
-      <entry key="H1" value="55.134602426998946" />
-      <entry key="H2" value="56.5232667312387" />
-      <entry key="H4" value="57.25026323142294" />
-      <entry key="D1" value="57.87343301783685" />
-      <entry key="W1" value="57.981879133301064" />
+      <entry key="MS100" value="4.716498465721872E-5" />
+      <entry key="MS500" value="0.29261666725911956" />
+      <entry key="S2" value="3.6001244746445447" />
+      <entry key="S5" value="7.697897738957148" />
+      <entry key="S10" value="12.97546708295753" />
+      <entry key="S30" value="24.097313595448266" />
+      <entry key="S60" value="29.5625879275456" />
+      <entry key="M2" value="33.535377297221615" />
+      <entry key="M5" value="40.395337209117365" />
+      <entry key="M10" value="46.9105785957942" />
+      <entry key="M15" value="50.27984636710394" />
+      <entry key="M30" value="54.553523008650345" />
+      <entry key="H1" value="57.110466144852495" />
+      <entry key="H2" value="58.510902162417416" />
+      <entry key="H4" value="59.24400335681163" />
+      <entry key="D1" value="59.872378620793704" />
+      <entry key="W1" value="59.981728229586295" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -100,28 +98,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/albert/MyProjects/ReactProject/sculptures&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;/home/albert/.nvm/versions/node/v22.12.0/bin/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.runtime&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "OpenCodeWebPanel.stripePlaceRestored": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/home/albert/MyProjects/ReactProject/sculptures",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.javascript.runtime"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-56aff7b04f6f-JavaScript-WS-263.7307.202" />
+        <option value="bundled-jdk-30f59d01ecdd-ac68fc9d2b05-intellij.indexing.shared.core-IU-263.7307.200" />
       </set>
     </attachedChunks>
   </component>
