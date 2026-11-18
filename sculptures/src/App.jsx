@@ -1,67 +1,66 @@
+import { useState } from "react";
+import { Routes, Route, Link } from "react-router-dom";
 import { sculptureList } from "./data.js";
 import SculpturesPage from "./SculpturesPage";
 import SculptureAdd from "./SculpturesAdd";
 import SculptureRemove from "./SculpturesRemove";
 import SculpturesFilteredByYear from "./SculpturesFilteredByYear";
-import { useState } from "react";
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState("sculpture-page");
-  // 1. Elevamos el estado: App ahora es el dueño de la lista compartida
-  const [sculptures, setSculptures] = useState(sculptureList);
+    // El estado compartido de las esculturas sigue viviendo aquí sin cambios
+    const [sculptures, setSculptures] = useState(sculptureList);
 
-  const dispatcherPage = () => {
-    switch (currentPage) {
-      case "sculpture-page": // Solo necesita leer la lista
-          return <SculpturesPage sculptures={sculptures} />;
-      case "sculpture-add":
-          // Necesita leer la lista y modificarla
-          return (
-              <SculptureAdd
-                  sculptures={sculptures}
-                  setSculptures={setSculptures}
-              />
-          );
-      case "sculpture-remove":
-          // Necesita leer la lista y modificarla
-          return (
-              <SculptureRemove
-                  sculptures={sculptures}
-                  setSculptures={setSculptures}
-              />
-          );
-      case "sculptures-filtered-by-year":
-          // Solo necesita leer la lista para filtrarla
-          return <SculpturesFilteredByYear sculptures={sculptures} />;
-      default:
-        return <div>Select a page</div>;
-    }
-  };
+    return (
+        <>
+            <h1>Sculptures Site</h1>
 
-  return (
-    <>
-      <h1>Sculptures Site </h1>
+            {/* 1. Menú de navegación con <Link> en lugar de <button> o <a> */}
+            <nav
+                style={{
+                    display: "flex",
+                    gap: "1rem",
+                    borderBottom: "2px solid #ccc",
+                    paddingBottom: "0.5rem",
+                    marginBottom: "2rem",
+                }}
+            >
+                <Link to="/">Home</Link>
+                <Link to="/add">Add</Link>
+                <Link to="/remove">Remove</Link>
+                <Link to="/filter">Filter by year</Link>
+            </nav>
 
-      <div
-        style={{
-          display: "flex",
-          gap: "1rem",
-          borderBottom: "2px solid #ccc",
-          paddingBottom: "0.5rem",
-          marginBottom: "2rem",
-        }}
-      >
-        <button onClick={() => setCurrentPage("sculpture-page")}>Home</button>
-        <button onClick={() => setCurrentPage("sculpture-add")}>Add</button>
-        <button onClick={() => setCurrentPage("sculpture-remove")}>
-          Remove
-        </button>
-        <button onClick={() => setCurrentPage("sculptures-filtered-by-year")}>
-          Filter by year
-        </button>
-      </div>
-
-      {dispatcherPage()}
-    </>
-  );
+            {/* 2. Definición de qué componente se pinta según la URL actual */}
+            <Routes>
+                <Route
+                    path="/"
+                    element={<SculpturesPage sculptures={sculptures} />}
+                />
+                <Route
+                    path="/add"
+                    element={
+                        <SculptureAdd
+                            sculptures={sculptures}
+                            setSculptures={setSculptures}
+                        />
+                    }
+                />
+                <Route
+                    path="/remove"
+                    element={
+                        <SculptureRemove
+                            sculptures={sculptures}
+                            setSculptures={setSculptures}
+                        />
+                    }
+                />
+                <Route
+                    path="/filter"
+                    element={<SculpturesFilteredByYear sculptures={sculptures} />}
+                />
+                {/* 3. Ruta comodín (*) por si el usuario escribe una URL que no existe */}
+                <Route path="*" element={<div>404 - Page not found</div>} />
+            </Routes>
+        </>
+    );
 }
