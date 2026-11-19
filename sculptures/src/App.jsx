@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { sculptureList } from "./data.js";
+import Layout from "./Layout";
 import SculpturesPage from "./SculpturesPage";
 import SculptureAdd from "./SculpturesAdd";
 import SculptureRemove from "./SculpturesRemove";
@@ -29,31 +30,14 @@ export default function App() {
     }, [sculptures]);
 
     return (
-        <>
-            <h1>Sculptures Site</h1>
-
-            <nav
-                style={{
-                    display: "flex",
-                    gap: "1rem",
-                    borderBottom: "2px solid #ccc",
-                    paddingBottom: "0.5rem",
-                    marginBottom: "2rem",
-                }}
-            >
-                <Link to="/">Home</Link>
-                <Link to="/add">Add</Link>
-                <Link to="/remove">Remove</Link>
-                <Link to="/filter">Filter by year</Link>
-            </nav>
-
-            <Routes>
+        <Routes>
+            <Route path="/" element={<Layout />}>
                 <Route
-                    path="/"
+                    index
                     element={<SculpturesPage sculptures={sculptures} />}
                 />
                 <Route
-                    path="/add"
+                    path="add"
                     element={
                         <SculptureAdd
                             sculptures={sculptures}
@@ -62,7 +46,7 @@ export default function App() {
                     }
                 />
                 <Route
-                    path="/remove"
+                    path="remove"
                     element={
                         <SculptureRemove
                             sculptures={sculptures}
@@ -71,11 +55,11 @@ export default function App() {
                     }
                 />
                 <Route
-                    path="/filter"
+                    path="filter-by-year"
                     element={<SculpturesFilteredByYear sculptures={sculptures} />}
                 />
-                <Route path="*" element={<div>404 - Page not found</div>} />
-            </Routes>
-        </>
+                <Route path="*" element={<div>Select a page</div>} />
+            </Route>
+        </Routes>
     );
 }

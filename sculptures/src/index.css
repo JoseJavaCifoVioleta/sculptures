@@ -42,6 +42,25 @@ h2 {
   font-size: 24px;
 }
 
+nav {
+  display: flex;
+  gap: 1rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+button img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+
+button[aria-current="true"] {
+  outline: 3px solid var(--text-h);
+}
+
 table {
   margin: 0 auto;
 }
