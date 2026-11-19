@@ -1,64 +1,64 @@
-import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
-import { sculptureList } from "./data.js";
-import Layout from "./Layout";
-import SculpturesPage from "./SculpturesPage";
-import SculptureAdd from "./SculpturesAdd";
-import SculptureRemove from "./SculpturesRemove";
-import SculpturesFilteredByYear from "./SculpturesFilteredByYear";
-
-// Definimos una clave única para guardar los datos en el navegador
-const STORAGE_KEY = "sculptures_app_data";
+import { Navigate, Route, Routes } from "react-router-dom";
+import useSculptures from "./hooks/useSculptures.js";
+import Layout from "./Layout.jsx";
+import SculptureListPage from "./SculptureListPage.jsx";
+import SculptureDetailPage from "./SculptureDetailPage.jsx";
+import SculptureFormPage from "./SculptureFormPage.jsx";
+import SculpturesPage from "./SculpturesPage.jsx";
+import NoPage from "./NoPage.jsx";
 
 export default function App() {
-    // 1. Inicialización perezosa (Lazy Initialization):
-    // Al arrancar la app, comprobamos si ya existen datos guardados en localStorage
-    const [sculptures, setSculptures] = useState(() => {
-        const savedSculptures = localStorage.getItem(STORAGE_KEY);
-        // Si hay datos guardados, los convertimos de texto JSON a array de JS
-        if (savedSculptures) {
-            return JSON.parse(savedSculptures);
-        }
-        // Si es la primera vez que entra el usuario, cargamos la lista inicial por defecto
-        return sculptureList;
-    });
-
-    // 2. Sincronización automática con useEffect:
-    // Cada vez que el estado "sculptures" cambie (añadir o borrar), lo guardamos
-    useEffect(() => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(sculptures));
-    }, [sculptures]);
+    const {
+        sculptures,
+        addSculpture,
+        updateSculpture,
+        deleteSculpture,
+        resetSculptures,
+    } = useSculptures();
 
     return (
         <Routes>
-            <Route path="/" element={<Layout />}>
+            <Route
+                path="/"
+                element={
+                    <Layout
+                        sculptures={sculptures}
+                        addSculpture={addSculpture}
+                        updateSculpture={updateSculpture}
+                        deleteSculpture={deleteSculpture}
+                        resetSculptures={resetSculptures}
+                    />
+                }
+            >
+                <Route index element={<SculptureListPage />} />
                 <Route
-                    index
-                    element={<SculpturesPage sculptures={sculptures} />}
+                    path="gallery"
+                    element={
+                        <SculpturesPage caption="Highlights from the catalogue" />
+                    }
                 />
+                <Route path="sculptures/new" element={<SculptureFormPage />} />
+                <Route
+                    path="sculptures/:id"
+                    element={<SculptureDetailPage />}
+                />
+                <Route
+                    path="sculptures/:id/edit"
+                    element={<SculptureFormPage />}
+                />
+
+                {/* Rutas antiguas: siguen funcionando mediante redirección. */}
                 <Route
                     path="add"
-                    element={
-                        <SculptureAdd
-                            sculptures={sculptures}
-                            setSculptures={setSculptures}
-                        />
-                    }
+                    element={<Navigate to="/sculptures/new" replace />}
                 />
-                <Route
-                    path="remove"
-                    element={
-                        <SculptureRemove
-                            sculptures={sculptures}
-                            setSculptures={setSculptures}
-                        />
-                    }
-                />
+                <Route path="remove" element={<Navigate to="/" replace />} />
                 <Route
                     path="filter-by-year"
-                    element={<SculpturesFilteredByYear sculptures={sculptures} />}
+                    element={<Navigate to="/" replace />}
                 />
-                <Route path="*" element={<div>Select a page</div>} />
+
+                <Route path="*" element={<NoPage />} />
             </Route>
         </Routes>
     );

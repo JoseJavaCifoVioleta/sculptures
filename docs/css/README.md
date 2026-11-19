@@ -9,6 +9,8 @@ import './index.css'
 
 No classes, no frameworks. We only style **HTML tags** (`h1`, `ul`, `table`...) and the `#root` box.
 
+> **Note after the CRUD practice:** `index.css` is no longer ~50 lines. The tutorial below still describes the original *minimum* styles, which are unchanged; the CRUD and gallery pages added class-based rules on top. See [Update: CRUD practice](#update-crud-practice) at the end.
+
 > Learn more: [W3Schools CSS Tutorial](https://www.w3schools.com/css/)
 
 ---
@@ -267,3 +269,40 @@ ul {
 ---
 
 > Screenshots taken from the real app (`npm run dev`) at 1000px wide, using headless Chrome.
+
+---
+
+## Update: CRUD practice
+
+The routed CRUD practice extended `sculptures/src/index.css` without replacing the base rules. The original element selectors (`:root`, `body`, `#root`, `h1/h2/h3`, `table`, `ul`) are still there; the new part is organised with **classes** because cards, forms and the gallery need repeated styling.
+
+### New design tokens
+
+The `:root` block gained semantic variables, with dark-mode values in the same `@media (prefers-color-scheme: dark)` block:
+
+| Variable | Purpose |
+|---|---|
+| `--surface` | card and button background |
+| `--border` | lines, inputs and card outlines |
+| `--accent`, `--accent-bg` | links, active nav item, primary button |
+| `--danger`, `--danger-bg` | delete actions and validation errors |
+
+### New blocks
+
+| Block | Classes | Used by |
+|---|---|---|
+| Header and nav | `.site-header`, `.brand`, `nav a.active` | `Layout.jsx` |
+| Buttons | `.button-primary`, `.button-ghost`, `.button-danger`, `.button-danger-solid` | list, detail, form, gallery, dialog |
+| Catalogue | `.catalogue-toolbar`, `.catalogue-grid`, `.sculpture-card`, `.card-actions` | `SculptureListPage.jsx` |
+| Form | `.sculpture-form`, `.form-grid`, `.form-field`, `.form-input`, `.form-error` | `SculptureFormPage.jsx` |
+| Detail | `.detail-layout`, `.detail-media`, `.detail-meta`, `.detail-actions` | `SculptureDetailPage.jsx` |
+| Dialog | `.confirm-dialog`, `.confirm-card`, `.confirm-actions` | `ConfirmDialog.jsx` |
+| Gallery | `.gallery-panel`, `.gallery-thumbs`, `.gallery-image`, `.check-control` | `SculpturesPage.jsx` |
+
+### Responsive and motion
+
+- `@media (max-width: 720px)` switches the detail page to a single column.
+- `@media (prefers-reduced-motion: reduce)` disables the gallery background transition and the image animation.
+- `text-align: center` from `#root` is kept for pages; cards, forms and the detail layout override it with `text-align: left` where reading matters.
+
+The class names match the components, so each page can be styled independently without inline styles.

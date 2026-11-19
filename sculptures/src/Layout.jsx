@@ -1,18 +1,39 @@
-import { Outlet, Link } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 
-export default function Layout() {
-  return (
-    <>
-      <h1>Sculptures Site </h1>
+export default function Layout({
+    sculptures,
+    addSculpture,
+    updateSculpture,
+    deleteSculpture,
+    resetSculptures,
+}) {
+    return (
+        <>
+            <header className="site-header">
+                <Link to="/" className="brand">
+                    Sculptures Site
+                </Link>
 
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/add">Add</Link>
-        <Link to="/remove">Remove</Link>
-        <Link to="/filter-by-year">Filter by year</Link>
-      </nav>
+                <nav>
+                    <NavLink to="/" end>
+                        List
+                    </NavLink>
+                    <NavLink to="/gallery">Gallery</NavLink>
+                    <NavLink to="/sculptures/new">Add</NavLink>
+                </nav>
+            </header>
 
-      <Outlet />
-    </>
-  );
+            <main>
+                <Outlet
+                    context={{
+                        sculptures,
+                        addSculpture,
+                        updateSculpture,
+                        deleteSculpture,
+                        resetSculptures,
+                    }}
+                />
+            </main>
+        </>
+    );
 }
